@@ -20,7 +20,7 @@ defmodule Lego.Mixfile do
   def application do
     [
       mod: {Lego.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :timex_ecto]
     ]
   end
 
@@ -39,6 +39,8 @@ defmodule Lego.Mixfile do
       {:postgrex, ">= 0.13.3"},
       {:gettext, "~> 0.11"},
       {:download, "~> 0.0.4"},
+      {:timex, "~> 3.0"},
+      {:timex_ecto, "~> 3.0"},
       {:nimble_csv, "~> 0.4"},
       {:cowboy, "~> 1.0"}
     ]
