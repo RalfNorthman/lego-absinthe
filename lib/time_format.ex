@@ -1,9 +1,13 @@
 defmodule TimeFormat do
-  @defaults %{microsec: false, timezone: false}
+  @defaults %{microseconds: false, timezone: false}
 
   def format(timex_value, opts \\ []) do
-    %{microsec: microsec, timezone: timezone} = Enum.into(opts, @defaults)
-    us = if(microsec, do: "{ss}", else: "")
+    %{
+      microseconds: microseconds,
+      timezone: timezone
+    } = Enum.into(opts, @defaults)
+
+    us = if(microseconds, do: "{ss}", else: "")
     tz = if(timezone, do: " {Zabbr}", else: "")
     format_string = "{YYYY}-{0M}-{0D} {h24}:{0m}:{0s}" <> us <> tz
 

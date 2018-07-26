@@ -42,6 +42,8 @@ defmodule Lego.Mixfile do
       {:timex, "~> 3.0"},
       {:timex_ecto, "~> 3.0"},
       {:nimble_csv, "~> 0.4"},
+      {:absinthe, "~> 1.4.13"},
+      {:absinthe_plug, "~> 1.4.5"},
       {:cowboy, "~> 1.0"}
     ]
   end
