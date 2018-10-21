@@ -45,6 +45,8 @@ defmodule LegoWeb.Endpoint do
     signing_salt: "mNHQaKhy"
   )
 
+  plug(CORSPlug)
+
   plug(LegoWeb.Router)
 
   @doc """

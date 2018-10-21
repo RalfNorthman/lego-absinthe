@@ -45,6 +45,7 @@ defmodule Lego.Mixfile do
       {:nimble_csv, "~> 0.4"},
       {:absinthe, "~> 1.4.13"},
       {:absinthe_plug, "~> 1.4.5"},
+      {:cors_plug, "~> 1.5"},
       {:credo, "~> 0.9.3", only: [:dev, :test], runtime: false},
       {:cowboy, "~> 1.0"}
     ]
