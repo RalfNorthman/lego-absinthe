@@ -11,6 +11,11 @@ config :lego, LegoWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  live_reload: [
+    patterns: [
+      ~r{lego_web/.*(ex)$}
+    ]
+  ],
   watchers: []
 
 # ## SSL Support
@@ -35,6 +40,10 @@ config :logger, :console, format: "[$level] $message\n"
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
+
+config :absinthe, Absinthe.Logger,
+  filter_variables: ["token", "password", "secret"],
+  pipeline: true
 
 # Configure your database
 config :lego, Lego.Repo,

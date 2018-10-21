@@ -15,7 +15,8 @@ defmodule Csv do
   end
 
   defp to_map(keys, values) do
-    Enum.zip(keys, values)
+    keys
+    |> Enum.zip(values)
     |> Map.new()
   end
 end
