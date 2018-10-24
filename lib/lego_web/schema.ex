@@ -11,7 +11,13 @@ defmodule LegoWeb.Schema do
 
       resolve(fn
         _, %{matching: name}, _ when is_binary(name) ->
-          query = from(c in Color, where: ilike(c.name, ^"%#{name}%"))
+          query =
+            from(
+              c in Color,
+              where: ilike(c.name, ^"%#{name}%"),
+              order_by: [c.red, c.green, c.blue]
+            )
+
           {:ok, Repo.all(query)}
 
         _, _, _ ->
